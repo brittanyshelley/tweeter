@@ -18,16 +18,12 @@ html {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
-  position: fixed;
+  align-self: middle;
+  padding: 2em;
   width: 90%;
   margin-left: 2em;
-  margin-top: 500px;
-  margin-inline: ;
   background-color: #f4f1ec;
   color: #545149;
-  border: 2px solid orange;
-  border-radius: 5px;
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
 }
@@ -36,7 +32,7 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
-  border: 2px solid purple;
+  
 }
 
 /*

@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -44,15 +46,18 @@
   </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h1>Labore ad officia biltong exercitation ea fugiat bacon </h1>
-      <h2>Labore ad officia biltong exercitation ea fugiat bacon </h2>
-      <h3>Labore ad officia biltong exercitation ea fugiat bacon </h3>
-      <p>Bacon ipsum dolor amet pancetta alcatra bacon</p>
-      <ul>
-        <li>Coffee</li>
-        <li>Tea</li>
-        <li>Coca Cola</li>
-      </ul>
+      <section class="new-tweet">
+
+        <form action="/tweets" method="POST">
+          <label for="tweet-text">What are you humming about?</label><br/>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button class="tweet-button" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+
     </main>
   </body>
 </html>
