@@ -14,25 +14,28 @@ html {
  * Global layout stuff
  */
 
-.container {
+/* .container {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-self: middle;
   padding: 2em;
   width: 90%;
-  margin-left: 2em;
   background-color: #f4f1ec;
   color: #545149;
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
-}
+} */
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
-  
+
+}
+div.container {
+  display: flex;
+  justify-content: space-between;
 }
 
 /*
