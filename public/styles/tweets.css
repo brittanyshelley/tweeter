@@ -80,11 +80,6 @@ body, header, h1, h2, h3, p, ul, li {
   font-size: 12px;
 }
 
-/* Change color on hover */
-    /* Change color of child icons on hover */
-
-    }
-
 .tweet-footer div i {
   margin-right: 8px;
   cursor: pointer;
