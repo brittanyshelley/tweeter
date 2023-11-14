@@ -1,37 +1,14 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-$(document).ready(function() {
-  renderTweets(tweetData);
-});
+// /*
+//  * Client-side JS logic goes here
+//  * jQuery is already loaded
+//  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
+//  */
 
-// Assume renderTweets is implemented properly
+
+
+
+$(document).ready(function() {
+
 
 
 // Function to render tweets
@@ -40,14 +17,15 @@ const renderTweets = function (tweets) {
   $tweetsContainer.empty(); // jQuery method to clear the container
 
   // Loop through tweets and append each tweet element to the container
-  tweets.forEach(tweet => {
+    tweets.forEach(tweet => {
     const $tweet = createTweetElement(tweet); // the $tweet is a jQuery object returned from createTweetElement
     $tweetsContainer.append($tweet); // jQuery method to append the tweet element
+
   });
 };
 
 // Function to create a tweet element
-  function createTweetElement(tweetData) {
+  const createTweetElement = function(tweetData) {
     const $tweet = $(`
     <article class="tweet">
     <header class="tweet-header">
@@ -61,7 +39,7 @@ const renderTweets = function (tweets) {
       <p>${tweetData.content.text}</p>
     </div>
     <footer class="tweet-footer">
-      <span class="timestamp">${new Date(tweetData.created_at).toLocaleString()}</span>
+    <span class="timestamp">${new Date(tweetData.created_at).toLocaleString()}</span>
       <div>
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
@@ -73,18 +51,34 @@ const renderTweets = function (tweets) {
     return $tweet;
   };
 
-// Call renderTweets with the fake data when the page loads
-window.onload = function () {
-  renderTweets(tweetData);
+  $("form").on("submit", function (event) {
+  event.preventDefault();
+  const formData = $("form").serialize();
+
+    //Posts the tweet to "/tweets" page and then loads the tweets
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: formData
+    }).then(loadTweets).catch(function (err) {
+      console.log('Error: ', err);
+    });
+
+});
+//Grabs the post information and displays it on the tweeter page
+const loadTweets = function() {
+  $.ajax({
+    method: 'GET',
+    url: '/tweets',
+    success: function (data) {
+      console.log('Success: ', data);
+      renderTweets(data);
+    },
+    error: function (err) {
+      console.log('Error: ', err);
+    }
+  });
 };
 
-createTweetElement(tweetData);
-$(document).ready(function() {
-  renderTweets(tweetData);
+  loadTweets()
 });
-
-// Assume renderTweets is implemented properly
-
-// // Test / driver code (temporary)
-// console.log($tweet); // to see what it looks like
-// $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
