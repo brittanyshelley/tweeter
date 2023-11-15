@@ -24,6 +24,13 @@ const renderTweets = function (tweets) {
   });
 };
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+
 // Function to create a tweet element
   const createTweetElement = function(tweetData) {
     const $tweet = $(`
@@ -36,10 +43,10 @@ const renderTweets = function (tweets) {
       <span class="handle">${tweetData.user.handle}</span>
     </header>
     <div class="tweet-body">
-      <p>${tweetData.content.text}</p>
+      <p>${escape(tweetData.content.text)}</p>
     </div>
     <footer class="tweet-footer">
-    <span class="timestamp">${new Date(tweetData.created_at).toLocaleString()}</span>
+    <span class="timestamp">${timeago.format(tweetData.created_at).toLocaleString()}</span>
       <div>
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
