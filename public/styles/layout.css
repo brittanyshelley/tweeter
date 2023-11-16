@@ -47,3 +47,23 @@ article.tweet-header-left {
   justify-content: center;
   align-items: center;
 }
+@media (min-width: 1024px) {
+header#main-header, main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap
+
+  main {
+    width: 50%;
+    margin-left: 5%;
+
+  }
+
+  header#main-header {
+    margin-right: 5%;
+    width: 40%;
+    height: auto;
+
+  }
+}
+}

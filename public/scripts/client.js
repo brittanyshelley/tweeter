@@ -61,16 +61,30 @@ const escape = function (str) {
   $("form").on("submit", function (event) {
   event.preventDefault();
   const formData = $("form").serialize();
+  const tweetContent = $('#tweet-text').val();
 
-    //Posts the tweet to "/tweets" page and then loads the tweets
+  //Error handling
+  if (tweetContent.length > 140) {
+    alert('Your tweet is too long!');
+  } else if (tweetContent === '' || tweetContent === null) {
+    alert('Your tweet is empty!');
+  } else {
+    //Posts the submitted tweet to "/tweets" page and then loads the tweets
     $.ajax({
       method: 'POST',
       url: '/tweets',
       data: formData
-    }).then(loadTweets).catch(function (err) {
+    })
+    .then(() => {
+      $('#tweet-text').val('');
+      $('.counter').val('140');
+      loadTweets();
+
+    })
+    .catch(function (err) {
       console.log('Error: ', err);
     });
-
+  }
 });
 //Grabs the post information and displays it on the tweeter page
 const loadTweets = function() {
@@ -87,5 +101,5 @@ const loadTweets = function() {
   });
 };
 
-  loadTweets()
+
 });
