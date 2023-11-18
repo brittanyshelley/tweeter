@@ -65,9 +65,26 @@ const escape = function (str) {
 
   //Error handling
   if (tweetContent.length > 140) {
-    alert('Your tweet is too long!');
+    const errorMessage = $("#error-message");
+    errorMessage.text('Tweet too long');
+    $("#error-message").hide();
+    // Use slideDown to reveal the error message with a slow animation
+    $("#error-message").slideDown('slow', function () {
+        // After sliding down, fade out the error message after a delay
+        $(this).delay(2000).slideUp('slow');
+    });
+
+
   } else if (tweetContent === '' || tweetContent === null) {
-    alert('Your tweet is empty!');
+    const errorMessage = $("#error-message");
+    errorMessage.text('No tweet to display');
+    $("#error-message").hide();
+    // Use slideDown to reveal the error message with a slow animation
+    $("#error-message").slideDown('slow', function () {
+        // After sliding down, fade out the error message after a delay
+        $(this).delay(2000).slideUp('slow');
+    });
+
   } else {
     //Posts the submitted tweet to "/tweets" page and then loads the tweets
     $.ajax({
@@ -78,8 +95,6 @@ const escape = function (str) {
     .then(() => {
       $('#tweet-text').val('');
       $('.counter').val('140');
-      loadTweets();
-
     })
     .catch(function (err) {
       console.log('Error: ', err);
@@ -99,7 +114,8 @@ const loadTweets = function() {
       console.log('Error: ', err);
     }
   });
-};
 
+};
+loadTweets();
 
 });
