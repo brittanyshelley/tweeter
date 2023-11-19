@@ -106,9 +106,9 @@ const loadTweets = function() {
   $.ajax({
     method: 'GET',
     url: '/tweets',
-    success: function (data) {
-      console.log('Success: ', data);
-      renderTweets(data);
+    success: function (tweetData) {
+      console.log('Success: ', tweetData);
+      renderTweets(tweetData);
     },
     error: function (err) {
       console.log('Error: ', err);

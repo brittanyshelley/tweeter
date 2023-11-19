@@ -62,63 +62,28 @@ label, textarea {
 color: red;
 }
 
+@media (min-width: 1024px) {
+  body {
+    margin: 10px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+  }
 
-/* #tweet-text {
-  background-color: #f4f1ec;
-  outline: none;
-  border: none;
-  border-bottom: 3px solid black;
-  resize: none;
-  display: flex;
-}
+  #main-header {
+    width: 50%;
+    margin-left: 40px;
+    box-sizing: border-box;
+    padding: 10px;
+    float: left;
+  }
 
-.tweet-button {
-  font-family: 'Bungee', sans-serif;
-  background-color: #4056A1;
-  color: #FFFFFF;
-}
-
-.tweet-button, .counter {
-  display: flex;
-  flex: 1 auto;
-  justify-content: space-between;
-  display: inline-block;
-}
-
-.counter {
-  font-family: 'Bungee', sans-serif;
+  .container {
+    margin-top: 1000px;
+    width: 50%;
+    padding: 20px;
+  }
 }
 
-.formfooter {
-  display: flex;
-  justify-content: space-between;
-}
- */
-
-/* .item-a {
-  grid-area: header;
-}
-.item-b {
-  grid-area: main;
-}
-.item-c {
-  grid-area: button;
-}
-.item-d {
-  grid-area: counter;
-}
-.container {
-  grid-template-areas:
-    "<grid-area-name> | . | none | ..."
-    "...";
-} */
-
-/* .container {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "label label label label"
-    "#tweet-text #tweet-text #tweet-text #tweet-text"
-    ".tweet-button none none .counter";
-} */

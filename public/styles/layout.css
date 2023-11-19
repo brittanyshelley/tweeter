@@ -14,18 +14,7 @@ html {
  * Global layout stuff
  */
 
-/* .container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-self: middle;
-  padding: 2em;
-  width: 90%;
-  background-color: #f4f1ec;
-  color: #545149;
-  font-size: 24px;
-  font-family: 'Source Sans 3', sans-serif;
-} */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -55,23 +44,25 @@ article.tweet-header-left {
   justify-content: center;
   align-items: center;
 }
-@media (min-width: 1024px) {
-header#main-header, main {
-  display: flex;
-  flex-direction: row;
-  flex-wrap:wrap
+/* @media (min-width: 1024px) {
+  body {
+    margin: 10px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+  }
 
-  main {
+  #main-header {
     width: 50%;
-    margin-left: 5%;
-
+    box-sizing: border-box;
+    padding: 10px;
   }
 
-  header#main-header {
-    margin-right: 5%;
-    width: 40%;
-    height: auto;
-
+  .container {
+    width: 50%;
+    padding: 20px;
   }
-}
-}
+} */
+
