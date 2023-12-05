@@ -95,6 +95,7 @@ const escape = function (str) {
     .then(() => {
       $('#tweet-text').val('');
       $('.counter').val('140');
+      loadTweets();
     })
     .catch(function (err) {
       console.log('Error: ', err);
