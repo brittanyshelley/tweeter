@@ -68,6 +68,16 @@ color: red;
     margin-top: 50px;
     margin-left: 20px;
   }
+  main.container {
+    width: 50%;
+    margin-left: 20px;
+  }
+
+  #main-header {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+  }
 }
 
 
