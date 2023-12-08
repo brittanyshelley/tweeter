@@ -17,7 +17,7 @@ $(document).ready(function () {
     $tweetsContainer.empty(); // jQuery method to clear the container
 
     // Loop through tweets and append each tweet element to the container
-    tweets.forEach(tweet => {
+    tweets.reverse().forEach(tweet => {
       const $tweet = createTweetElement(tweet); // the $tweet is a jQuery object returned from createTweetElement
       $tweetsContainer.append($tweet); // jQuery method to append the tweet element
 

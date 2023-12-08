@@ -3,7 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
@@ -22,47 +22,8 @@ body {
   font-family: 'Source Sans 3', sans-serif;
 
 }
-div.container {
+
+#group-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
-#error-message {
-  display: flex;
-  justify-content: center;
-  color: red;
-  background-color: lightcoral;
-
-}
-
-article.tweet-header-left {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* @media (min-width: 1024px) {
-  body {
-    margin: 10px;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100vh;
-  }
-
-  #main-header {
-    width: 50%;
-    box-sizing: border-box;
-    padding: 10px;
-  }
-
-  .container {
-    width: 50%;
-    padding: 20px;
-  }
-} */
-

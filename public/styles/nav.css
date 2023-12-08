@@ -1,6 +1,5 @@
 nav {
   height: 120px;
-  width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
   padding-left: 2em;
@@ -8,9 +7,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
-  
 }
 nav > span {
   font-family: 'Bungee', sans-serif;
