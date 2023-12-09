@@ -14,7 +14,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-!["Screenshots of Tweet Page"](https://github.com/brittanyshelley/tweeter/blob/main/Docs/tweeter.jpg?raw=true)https://github.com/brittanyshelley/tweeter/blob/main/Docs/tweeter.jpg?raw=true
+!["Screenshots of Tweet Page"](https://github.com/brittanyshelley/tweeter/blob/main/Docs/tweeter.jpg?raw=true)
 
 
 
